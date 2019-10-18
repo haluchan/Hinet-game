@@ -1,0 +1,313 @@
+
+@media screen and (orientation: portrait) and (max-width: 812px) {
+  img{
+    width: 100%;
+    vertical-align:middle;
+  }
+  body{
+    //background-color: #23b9eb;
+    .pc{
+      max-width: 1920px;
+      margin: 0 auto;
+      display: none;
+    }
+    .revert{
+      max-width: 1080px;
+      display: none;
+      position: absolute;
+      z-index: 10;
+    }
+    .container{
+      position: relative;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      max-width: 640px;
+      min-width: 320px;
+      //width: 100vw;
+      //height: 1080px;
+      background-color: #23b9eb;
+      z-index: 0;
+      .page1{
+        background-image: url("../img/page1_bg.png");
+        background-repeat: no-repeat;
+        height: 100Vh;
+        background-size: 100%;
+        background-position: top center;
+        .logo{
+          width: 20.9375%;
+          padding: 3.4375% 0 0 5.9375%;
+        }
+        .title{
+          width: 84.375%;
+          padding: 28.15% 0 0 12.34375% ;
+        }
+        .video{
+          position: relative;
+          padding: 0 17.1875% 0 17.1875%;
+          img{
+            //max-width: 420px;
+            position: relative;
+            z-index: 0;
+          }
+          iframe{
+            //max-width: 400px;
+            position: absolute;
+            padding-top: 10px;
+            z-index: 200;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+
+          }
+
+        }
+        .page1Btn{
+          width: 62.5%;
+          padding: 0 0 0 18.75%;
+          text-align: right;
+          .btn-go{
+            width: 100%;
+            margin: 2.34375% 0 0 0;
+            border-radius: 10px;
+            box-shadow: 0px 10px 0px rgba(18, 50, 73, 1);
+            position: relative;
+            top: 0;
+            cursor: pointer;
+            .btn1{
+              position: relative;
+              top: 3px;
+              cursor: pointer;
+
+            }
+
+          }
+          .hand{
+            display: inline-block;
+            width: 16%;
+            position: relative;
+            right: -14px;
+            bottom: 17px;
+          }
+        }
+        //.clear1{
+        //  padding-bottom:32.1875%;
+        //}
+
+      }
+
+      .page2{
+        background-image: url("../img/page2_bg.png");
+        background-repeat: no-repeat;
+        height: 100Vh;
+        background-size: 100%;
+        background-position: top center;
+        display: none;
+        .logo{
+          width: 20.9375%;
+          padding: 3.4375% 0 0 5.9375%;
+        }
+        .title2{
+          width: 67.1875%;
+          padding: 23.75% 0 6.09375%  16.875%;
+        }
+        .start{
+          width: 62.5%;
+          margin: 0 auto;
+          position: relative;
+          top: 0;
+          cursor: pointer;
+
+        }
+        //.clear2{
+        //  padding-bottom:78.125%;
+        //}
+      }
+      .preGame{
+        display: none;
+      }
+      #game{
+        display: none;
+        transform-origin:0 0;
+      }
+      .share{
+        background-image: url("../img/bg.png");
+        background-repeat: no-repeat;
+        height: 100Vh;
+        background-size: 100%;
+        background-position: top center;
+        display: none;
+        .logo{
+          width: 20.9375%;
+          padding: 3.4375% 0 0 5.9375%;
+        }
+        .titleF{
+          width: 91.09375%;
+          padding: 40.3% 0 0 8.4375%;
+        }
+        .btnC{
+          position: relative;
+          top: -4.6875%;
+          width: 89.84375%;
+          margin: 0px auto;
+
+          .btn4{
+            display: inline-block;
+            width: 48%;
+            margin-bottom: 4.6875%;
+            margin-right: 1.217391304%;
+            box-sizing: border-box;
+
+            position: relative;
+            top: 0;
+            cursor: pointer;
+
+          }
+          .btn3{
+            text-align: right;
+            display: inline-block;
+            width: 48%;
+            margin-left: 1.217391304%;
+            box-sizing: border-box;
+
+            position: relative;
+            top: 0;
+            cursor: pointer;
+
+          }
+          .btn5{
+            display: block;
+            width: 100%;
+            padding: 0 0 0 0;
+            position: relative;
+            top: 0;
+            cursor: pointer;
+          }
+        }
+        //.clear5{
+        //  padding-bottom: 32.03125%;
+        //}
+      }
+    }
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 812px){
+  img{
+    width: 100%;
+    vertical-align:middle;
+  }
+  .pc{
+    max-width: 1920px;
+    margin: 0 auto;
+    display: none;
+  }
+  .revert{
+    display: block;
+    width: 100vw;
+    position: absolute;
+    z-index: 10;
+  }
+  .container{
+    //display: none;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    //max-width: 640px;
+    min-width: 320px;
+    height: 100Vh;
+    background-color: #23b9eb;
+    z-index: 0;
+    video{
+      position: absolute;
+      z-index: 200;
+    }
+    .page1{
+      background-image: url("../img/page1_bg.png");
+      background-repeat: no-repeat;
+      height: 100Vh;
+      background-size: 100%;
+      background-position: top center;
+      .logo{
+        display: none;
+      }
+      .title{
+        display: none;
+      }
+      .video{
+        img{
+          display: none;
+        }
+      }
+      .page1Btn{
+        display: none;
+      }
+      //.clear1{
+      //  padding-bottom:32.1875%;
+      //}
+
+
+    }
+    .page2{
+      display: none;
+    }
+    .preGame{
+      display: none;
+    }
+    #game{
+      display: none;
+    }
+    .share{
+      display: none;
+    }
+  }
+}
+
+@media screen  and (min-width: 813px){
+  img{
+    width: 100%;
+    vertical-align:middle;
+  }
+  .revert{
+    display: none;
+    width: 100vw;
+    position: absolute;
+    z-index: 100;
+  }
+  .pc{
+    max-width: 1920px;
+    margin: 0 auto;
+    display: block;
+  }
+  .container{
+    display: none;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 640px;
+    min-width: 320px;
+    height: 100Vh;
+    //background-color: #23b9eb;
+    z-index: 0;
+    .page1{
+      display: none;
+    }
+    .page2{
+      display: none;
+    }
+    .preGame{
+      display: none;
+    }
+    #game{
+      display: none;
+    }
+    .share{
+      display: none;
+    }
+  }
+
+}

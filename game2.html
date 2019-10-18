@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <!-- 在手機裡全螢幕 -->
+    <!--<link rel="stylesheet" href="css/layout.css"/>-->
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/phaser2.11.0/phaser.js"></script>
+    <title>phaser</title>
+</head>
+<body>
+    <div id="game"></div>
+    <script>
+      let game = new Phaser.Game(640, 1080, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render });
+      let boat , player, shark1 , shark2 , shark3  ,wave1 ,wave2 ,wave3 ,wave4 ,wave5 ,wave6 ,wave7 ,wave8 ,wave9 ,wave10 ,wave11 ,wave12 ,wave13 ,wave14 ,playScene ,success , fail ,chat3 ,chat2 ,chat1 , Hinetlogo;
+      function preload() {
+        game.stage.backgroundColor = "#C4EDFD";
+
+        game.load.image('HinetLogo', 'img/HinetLogo.png');
+
+        game.load.image('boat', 'img/boat.png');
+
+        game.load.image('wave1', 'img/wave1.png');
+        game.load.image('wave2', 'img/wave2.png');
+        game.load.image('wave3', 'img/wave3.png');
+        game.load.image('wave4', 'img/wave4.png');
+        game.load.image('wave5', 'img/wave5.png');
+
+        game.load.image('shark3', 'img/shark3L.png');
+        game.load.image('chat_3', 'img/chat_3.png');
+
+        game.load.image('wave6', 'img/wave6.png');
+        game.load.image('wave7', 'img/wave7.png');
+        game.load.image('wave8', 'img/wave8.png');
+
+        game.load.image('shark2', 'img/shark2R.png');
+        game.load.image('chat_2', 'img/chat_2.png');
+
+        game.load.image('wave9', 'img/wave9.png');
+        game.load.image('wave10', 'img/wave10.png');
+        game.load.image('wave11', 'img/wave11.png');
+
+        game.load.image('shark1', 'img/shark1L.png');
+        game.load.image('chat_1', 'img/chat_1.png');
+
+        game.load.image('wave12', 'img/wave12.png');
+        game.load.image('wave13', 'img/wave13.png');
+        game.load.image('wave14', 'img/wave14.png');
+        game.load.image('player', 'img/player-R.png');
+
+        game.load.image('fail', 'img/fail.png');
+        game.load.image('success', 'img/success.png');
+
+        game.load.physics('physicsData', 'img/physicsData.json');
+
+
+      }
+
+      function create() {
+
+            //	Enable p2 physics
+            game.physics.startSystem(Phaser.Physics.P2JS);
+
+            //  Make things a bit more bouncey
+            game.physics.p2.defaultRestitution = 0.8;
+
+            //  This creates a simple sprite that is using our loaded image and
+            //  displays it on-screen
+            Hinetlogo = game.add.sprite(38, 22, 'HinetLogo');
+            boat = game.add.sprite(150, 40, 'boat');
+            wave1 = game.add.sprite(0, 198, 'wave1');
+            wave2 = game.add.sprite(0, 254, 'wave2');
+            wave3 = game.add.sprite(0, 278, 'wave3');
+            wave4 = game.add.sprite(0, 340, 'wave4');
+            wave5 = game.add.sprite(0, 400, 'wave5');
+            shark3 = game.add.sprite(461, 416, 'shark3');
+            chat3 = game.add.sprite(337, 311, 'chat_3');
+            wave6 = game.add.sprite(0, 432, 'wave6');
+            wave7 = game.add.sprite(0, 519, 'wave7');
+            wave8 = game.add.sprite(0, 564, 'wave8');
+            shark2 = game.add.sprite(0, 584, 'shark2');
+            chat2 = game.add.sprite(40, 475, 'chat_2');
+            wave9 = game.add.sprite(0, 629, 'wave9');
+            wave10 = game.add.sprite(0, 671, 'wave10');
+            wave11 = game.add.sprite(0, 748, 'wave11');
+            shark1 = game.add.sprite(345, 730, 'shark1');
+            chat1 = game.add.sprite(460, 656, 'chat_1');
+            wave12 = game.add.sprite(0, 838, 'wave12');
+            wave13 = game.add.sprite(0, 890, 'wave13');
+            wave14 = game.add.sprite(0, 973, 'wave14');
+            player = game.add.sprite(134, 830, 'player');
+            fail = game.add.sprite(0, 384, 'fail');
+            success = game.add.sprite(0, 384, 'success');
+
+            game.add.tween(boat).to({ y: 45 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave1).to({ y: 208 }, 800, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave2).to({ y: 260 }, 700, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave3).to({ y: 288 }, 900, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave4).to({ y: 350 }, 700, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave5).to({ y: 410 }, 900, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave6).to({ y: 442 }, 900, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave7).to({ y: 529 }, 800, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave8).to({ y: 574 }, 900, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave9).to({ y: 639 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave10).to({ y: 681 }, 700, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave11).to({ y: 758 }, 900, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave12).to({ y: 848 }, 800, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave13).to({ y: 895 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            game.add.tween(wave14).to({ y: 978 }, 900, Phaser.Easing.Linear.None, true, 0, 1000, true);
+
+            player.anchor.set(0.5, 0.5);
+
+            fail.visible = false;
+            success.visible = false;
+
+            // game.physics.enable(boat, Phaser.Physics.ARCADE);
+
+            player.inputEnabled = true;
+            player.input.enableDrag(true);
+
+            game.physics.p2.enable([ boat, shark3, shark2, shark1, player ], false);
+
+
+
+            boat.body.clearShapes();
+            boat.body.loadPolygon('physicsData', 'boat');
+
+            shark3.body.clearShapes();
+            shark3.body.loadPolygon('physicsData', 'shark3L');
+
+            shark2.body.clearShapes();
+            shark2.body.loadPolygon('physicsData', 'shark2R');
+
+            shark1.body.clearShapes();
+            shark1.body.loadPolygon('physicsData', 'shark1L');
+
+            player.body.clearShapes();
+            player.body.loadPolygon('physicsData', 'player-R');
+
+
+
+
+
+
+            // boat.body.velocity.y = 10;
+
+            // loop(boat.body.x , boat.body.y , 10)
+
+
+            // console.log(boat.body.y);
+
+      }
+      function update () {
+
+
+      }
+
+      function render () {
+
+        // game.debug.inputInfo(32, 32);
+
+      }
+
+      function loop() {
+
+        for (let i = 0; i < 20; i++) {
+
+          if( range > 0 && range <= 10){
+            ran = vy*1;
+          }else{
+            ran = vy*-1;
+          }
+
+        }
+
+        return ran
+      }
+
+
+
+
+    </script>
+</body>
+</html>
+

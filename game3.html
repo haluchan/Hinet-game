@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!-- 在手機裡全螢幕 -->
+
+    <script src="pixi/pixi.js"></script>
+    <script src="pixi/bump.js"></script>
+    <title>Hinet</title>
+</head>
+<body>
+<section class="game" id="game"></section>
+
+<script>
+  game();
+  function game() {
+    var section = document.querySelector('#game');
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+    var sizeX = ((vw / 640));
+    var sc = 640 / 1080;
+    var Graphics = PIXI.Graphics;
+    var sizeY = ((sizeX * 1080) / 1080);
+    // divScale(sizeX, sizeY);
+
+    var Application = PIXI.Application,
+      Container = PIXI.Container,
+      loader = PIXI.loader,
+      resources = PIXI.loader.resources,
+      TextureCache = PIXI.utils.TextureCache,
+      Sprite = PIXI.Sprite;
+    b = new Bump(PIXI);
+
+
+    var boat, player, shark1, shark2, shark3, wave1, wave2, wave3, wave4, wave5, wave6, wave7, wave8, wave9, wave10,
+      wave11, wave12, wave13, wave14, playScene, success, fail, chat3, chat2, chat1, Hinetlogo, shark1Scene,
+      shark2Scene, shark3Scene, ocean1, ocean2, ocean3, s1d1, s1d2, s2d1, s3d1, playerDea, playerDeaScene, playerAlive,
+      test, testScene, shark1NolScene, shark2NolScene, shark3NolScene, shark1RevertScene, shark2RevertScene,
+      shark3RevertScene, s1d1R, s1d2R, s2d1R, s3d1R, playerDetection, shark1RDetection, shark1LDetection,
+      shark2RDetection, shark2LDetection, shark3RDetection, shark3LDetection;
+
+    //Create a Pixi Application
+    var app = new PIXI.Application({
+        width: 640,
+        height: 1080,
+        antialiasing: false,
+        transparent: false,
+        resolution: 1,
+        backgroundColor: 0xC4EDFD
+      }
+    );
+
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    section.appendChild(app.view);
+    // window.addEventListener("resize", onResize);
+    //To resize the canvas®
+    // app.renderer.resize(640, 1080);
+
+    //To change the background color
+    // app.renderer.backgroundColor = 0xC4EDFD;
+
+    // loader
+    //   .add("img/boat.png")
+    //   .load(setup);
+
+
+    function setup() {
+
+      backgroundScene = new Container();
+      playScene = new Container();
+      gameOverFailScene = new Container();
+      gameOverSuccessScene = new Container();
+      shark1NolScene = new Container();
+      shark2NolScene = new Container();
+      shark3NolScene = new Container();
+      shark1Scene = new Container();
+      shark2Scene = new Container();
+      shark3Scene = new Container();
+      shark1RevertScene = new Container();
+      shark2RevertScene = new Container();
+      shark3RevertScene = new Container();
+      ocean1 = new Container();
+      ocean2 = new Container();
+      ocean3 = new Container();
+      playerDeaScene = new Container();
+      playerAlive = new Container();
+      testScene = new Container();
+
+
+      boat = new Sprite.fromImage('img/boat.png');
+
+      boat.x = 150;
+      boat.y = 40;
+
+      backgroundScene.addChild(boat);
+
+
+      app.stage.addChild(backgroundScene);
+
+
+      //Set the game state
+      // state = play;
+      //
+      // //Start the game loop
+      // app.ticker.add(delta => gameLoop(delta));
+
+    }
+  }
+
+
+
+</script>
+</body>
+</html>
